@@ -13,11 +13,11 @@ Button::Button(String name, Vector2f pos, Vector2f size, int text_size, Color te
     text.setPosition(sprite.getPosition());
 
 
-    Vector2f indent((sprite.getSize().x - text.getLocalBounds().width)/2, (sprite.getSize().y - text.getLocalBounds().height)/2);
+    Vector2f indent((sprite.getSize().x - text.getGlobalBounds().width)/2, (sprite.getSize().y - text.getGlobalBounds().height)/2);
 
     text.setString(name);
     text.setCharacterSize(text_size);
-    text.setPosition(sprite.getPosition().x + indent.x, sprite.getPosition().y + indent.y);
+    text.setPosition(sprite.getPosition() + indent);
     text.setFont(font); // при уничтожении шрифта баг
     text.setFillColor(text_color);
 

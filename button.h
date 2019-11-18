@@ -2,7 +2,7 @@
 #define BUTTON_H
 
 #include "gameobject.h"
-#include "helper.h"
+#include "globals.h"
 
 enum class ButtonState {NONE, PRESS, CURSOR_ON};
 
@@ -15,7 +15,7 @@ private:
 public:
     Button(String name, Vector2f pos, Vector2f size, int text_size = 30, Color text_color = Color::Black, Color background = Color::Blue);
     // Drawable interface
-    virtual void logic(RenderWindow *w) override;
+    virtual void logic() override;
     ButtonState isClicked(RenderWindow *w);
 protected:
     void draw(RenderTarget &target, RenderStates states) const override;

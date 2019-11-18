@@ -1,6 +1,8 @@
-#include "helper.h"
+#include "globals.h"
 
-Font Helper::getFont(String nameFont)
+RenderWindow *Globals::mainWindow = new RenderWindow();
+
+Font Globals::getFont(String nameFont)
 {
     Font font;
     if(!font.loadFromFile(nameFont))

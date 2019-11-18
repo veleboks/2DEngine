@@ -1,16 +1,17 @@
-#ifndef HELPER_H
-#define HELPER_H
+#ifndef GLOBALS_H
+#define GLOBALS_H
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-using namespace std;
 using namespace sf;
+using namespace std;
 
-class Helper
+class Globals
 {
 public:
+    static RenderWindow *mainWindow;
     static Font getFont(String nameFont = "Resources/Fonts/main.ttf");
 };
 
-#endif // HELPER_H
+#endif // GLOBALS_H

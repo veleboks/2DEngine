@@ -7,6 +7,7 @@
 #include "gameobject.h"
 #include "button.h"
 #include "globals.h"
+#include "scene.h"
 
 using namespace sf;
 using namespace std;
@@ -18,17 +19,16 @@ public:
     ~Engine();
     ///Запуск
     virtual void start();
-    void addObject(GameObject* object);
-    void addObject(vector<GameObject*> obj);
+    void addObject(Scene* object);
+    void addObject(vector<Scene*> obj);
 private:
-    vector<GameObject*> objects; // объекты для отрисовки
+    vector<Scene*> scenes; // объекты для отрисовки
     ///Обработка событий
     void processingEvents();
     ///Окно
     RenderWindow *window;
     Event event;
-    void logic();
-    void render();
+    void update();
 protected:
     void initObjects();
 };

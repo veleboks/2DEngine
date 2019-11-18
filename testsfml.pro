@@ -18,8 +18,10 @@ SOURCES += \
         button.cpp \
         engine.cpp \
         gameobject.cpp \
-        helper.cpp \
-        main.cpp
+        globals.cpp \
+        main.cpp \
+        menu.cpp \
+        scene.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -30,4 +32,6 @@ HEADERS += \
     button.h \
     engine.h \
     gameobject.h \
-    helper.h
+    globals.h \
+    menu.h \
+    scene.h
