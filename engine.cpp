@@ -14,19 +14,19 @@ Engine::Engine(String nameWindow, unsigned int width, unsigned int height, bool 
 
 Engine::~Engine()
 {
-    for(auto it : objects) {
+    for(auto it : scenes) {
         delete it;
     }
 }
 
-void Engine::addObject(GameObject *object)
+void Engine::addObject(Scene *scene)
 {
-    objects.push_back(object);
+    scenes.push_back(scene);
 }
 
-void Engine::addObject(vector<GameObject*> obj)
+void Engine::addObject(vector<Scene*> scenes)
 {
-    objects.insert(objects.end(), obj.begin(), obj.end());
+    this->scenes.insert(this->scenes.end(), scenes.begin(), scenes.end());
 }
 
 void Engine::start()
@@ -35,8 +35,7 @@ void Engine::start()
 
         processingEvents();
 
-        logic();
-        render();
+        update();
     }
 }
 
@@ -49,21 +48,18 @@ void Engine::processingEvents()
     }
 }
 
-void Engine::logic()
-{
-    for(auto it: objects) it->logic();
-}
+void Engine::update() {
 
-void Engine::render()
-{
+    for(auto it: scenes) it->logic();
+
     window->clear(Color::White);
 
-    for(auto it: objects) window->draw(*it);
+    for(auto it: scenes) it->render();
 
     window->display();
 }
 
 void Engine::initObjects()
 {
-    addObject(new Button("name", Vector2f(100, 100), Vector2f(200, 40)));
+//    addObject(new Button("name", Vector2f(100, 100), Vector2f(200, 40)));
 }
