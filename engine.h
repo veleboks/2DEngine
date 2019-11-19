@@ -8,6 +8,7 @@
 #include "button.h"
 #include "globals.h"
 #include "scene.h"
+#include "menu.h"
 
 using namespace sf;
 using namespace std;
@@ -19,8 +20,8 @@ public:
     ~Engine();
     ///Запуск
     virtual void start();
-    void addObject(Scene* object);
-    void addObject(vector<Scene*> obj);
+    void addScene(Scene* scene);
+    void addScene(vector<Scene*> scenes);
 private:
     vector<Scene*> scenes; // объекты для отрисовки
     ///Обработка событий
@@ -30,7 +31,7 @@ private:
     Event event;
     void update();
 protected:
-    void initObjects();
+    void initScenes();
 };
 
 #endif // ENGINE_H

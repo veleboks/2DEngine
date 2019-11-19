@@ -1,15 +1,15 @@
 #ifndef MENU_H
 #define MENU_H
 
-//#include "engine.h"
+#include "scene.h"
+#include "button.h"
 
-//enum class MenuButtons {Play, Settings};
-
-//class Menu : public Engine
-//{
-//public:
-//    Menu(RenderWindow *window);
-//    void start();
-//};
+class Menu : public Scene
+{
+private:
+    const String BUTTONS_NAMES[3] = {"Play", "Records", "Settings"};
+public:
+    Menu();
+};
 
 #endif // MENU_H

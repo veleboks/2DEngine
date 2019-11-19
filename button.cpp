@@ -17,7 +17,7 @@ Button::Button(String name, Vector2f pos, Vector2f size, int text_size, Color te
 
     text.setString(name);
     text.setCharacterSize(text_size);
-    text.setPosition(sprite.getPosition() + indent);
+    text.setPosition(sprite.getPosition());
     text.setFont(font); // при уничтожении шрифта баг
     text.setFillColor(text_color);
 

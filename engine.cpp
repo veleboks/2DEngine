@@ -6,7 +6,7 @@ Engine::Engine(String nameWindow, unsigned int width, unsigned int height, bool 
 
     Globals::mainWindow = window;
 
-    this->initObjects();
+    this->initScenes();
 
     if(defaultStart)
         start();
@@ -19,12 +19,12 @@ Engine::~Engine()
     }
 }
 
-void Engine::addObject(Scene *scene)
+void Engine::addScene(Scene *scene)
 {
     scenes.push_back(scene);
 }
 
-void Engine::addObject(vector<Scene*> scenes)
+void Engine::addScene(vector<Scene*> scenes)
 {
     this->scenes.insert(this->scenes.end(), scenes.begin(), scenes.end());
 }
@@ -59,7 +59,7 @@ void Engine::update() {
     window->display();
 }
 
-void Engine::initObjects()
+void Engine::initScenes()
 {
-//    addObject(new Button("name", Vector2f(100, 100), Vector2f(200, 40)));
+    addScene(new Menu());
 }
