@@ -21,6 +21,7 @@ SOURCES += \
         Objects/unit.cpp \
         Scenes/game.cpp \
         Scenes/menu.cpp \
+        Utils/spawncontroll.cpp \
         engine.cpp \
         gameobject.cpp \
         globals.cpp \
@@ -39,6 +40,7 @@ HEADERS += \
     Objects/unit.h \
     Scenes/game.h \
     Scenes/menu.h \
+    Utils/spawncontroll.h \
     engine.h \
     gameobject.h \
     globals.h \
