@@ -1,0 +1,11 @@
+debug/button.o
+debug/enemy.o
+debug/player.o
+debug/unit.o
+debug/game.o
+debug/menu.o
+debug/engine.o
+debug/gameobject.o
+debug/globals.o
+debug/main.o
+debug/scene.o

@@ -49,7 +49,9 @@ void Engine::processingEvents()
 }
 
 void Engine::update() {
-
+    float time = clock.getElapsedTime().asMicroseconds();
+    clock.restart();
+    Globals::gameTime = time / 1000;
     for(auto it: scenes) it->logic();
 
     window->clear(Color::White);
@@ -61,5 +63,5 @@ void Engine::update() {
 
 void Engine::initObjects()
 {
-//    addObject(new Button("name", Vector2f(100, 100), Vector2f(200, 40)));
+    addObject(new Game);
 }

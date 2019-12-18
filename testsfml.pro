@@ -15,12 +15,16 @@ DEPENDPATH += $$PWD/SFML/include
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        button.cpp \
+        Objects/button.cpp \
+        Objects/enemy.cpp \
+        Objects/player.cpp \
+        Objects/unit.cpp \
+        Scenes/game.cpp \
+        Scenes/menu.cpp \
         engine.cpp \
         gameobject.cpp \
         globals.cpp \
         main.cpp \
-        menu.cpp \
         scene.cpp
 
 # Default rules for deployment.
@@ -29,9 +33,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    button.h \
+    Objects/button.h \
+    Objects/enemy.h \
+    Objects/player.h \
+    Objects/unit.h \
+    Scenes/game.h \
+    Scenes/menu.h \
     engine.h \
     gameobject.h \
     globals.h \
-    menu.h \
     scene.h

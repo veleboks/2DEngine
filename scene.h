@@ -18,6 +18,8 @@ public:
     void render();
 private:
     vector<GameObject*> objects;
+protected:
+    virtual void sceneLogic() = 0;
 };
 
 #endif // SCENE_H

@@ -10,6 +10,7 @@ using namespace std;
 class Globals
 {
 public:
+    static float gameTime;
     static RenderWindow *mainWindow;
     static Font getFont(String nameFont = "Resources/Fonts/main.ttf");
 };

@@ -5,9 +5,10 @@
 #include <vector>
 #include <iostream>
 #include "gameobject.h"
-#include "button.h"
+#include "Objects/button.h"
 #include "globals.h"
 #include "scene.h"
+#include "Scenes/game.h"
 
 using namespace sf;
 using namespace std;
@@ -22,6 +23,7 @@ public:
     void addObject(Scene* object);
     void addObject(vector<Scene*> obj);
 private:
+    Clock clock;
     vector<Scene*> scenes; // объекты для отрисовки
     ///Обработка событий
     void processingEvents();

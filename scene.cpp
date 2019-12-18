@@ -12,6 +12,7 @@ void Scene::addObject(vector<GameObject*> objects)
 
 void Scene::logic()
 {
+    sceneLogic();
     for(auto it: objects) it->logic();
 }
 

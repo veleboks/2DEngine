@@ -1,0 +1,11 @@
+release/button.o
+release/enemy.o
+release/player.o
+release/unit.o
+release/game.o
+release/menu.o
+release/engine.o
+release/gameobject.o
+release/globals.o
+release/main.o
+release/scene.o
