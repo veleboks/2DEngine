@@ -4,15 +4,20 @@
 #include "scene.h"
 #include "Objects/player.h"
 #include "Objects/enemy.h"
+#include "Utils/spawncontroll.h"
 
 class Game : public Scene
 {
 private:
-    vector<Enemy*> enemies;
-    Player * player;
+    float spawnDelay = 1; // in seconds
+    float sceneTime; // in seconds
+    float prevSpawnTime;
+    vector<Enemy *> enemies;
+    SpawnControll *spawner;
+    Player *player;
 public:
     Game();
-    void addEnemy(Enemy* e);
+    void addEnemy(Enemy *e);
 
 //     Scene interface
 protected:
