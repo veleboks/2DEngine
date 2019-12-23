@@ -15,6 +15,11 @@ void Enemy::draw(RenderTarget &target, RenderStates states) const
     target.draw(sprite, states);
 }
 
+FloatRect Enemy::getGlobalBounds()
+{
+    return sprite.getGlobalBounds();
+}
+
 void Enemy::logic()
 {
     float speed = SPEED * Globals::gameTime;

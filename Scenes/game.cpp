@@ -1,5 +1,13 @@
 #include "game.h"
 
+void Game::spawnEnemy()
+{
+    if (sceneTime - prevSpawnTime > spawnDelay) {
+        addEnemy(new Enemy(spawner->generateSpawnPos()));
+        prevSpawnTime = sceneTime;
+    }
+}
+
 Game::Game()
 {
     sceneTime = 0;
@@ -20,9 +28,8 @@ void Game::sceneLogic()
 {
     sceneTime += Globals::gameTime/1000;
     Enemy::playerPos = player->getCenter();
-    if (sceneTime - prevSpawnTime > spawnDelay) {
-        addEnemy(new Enemy(spawner->generateSpawnPos()));
-        prevSpawnTime = sceneTime;
-    }
+    spawnEnemy();
+
+
 }
 

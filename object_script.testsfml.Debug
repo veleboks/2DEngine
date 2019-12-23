@@ -1,9 +1,12 @@
 debug/button.o
+debug/damageobject.o
 debug/enemy.o
+debug/light.o
 debug/player.o
 debug/unit.o
 debug/game.o
 debug/menu.o
+debug/spawncontroll.o
 debug/engine.o
 debug/gameobject.o
 debug/globals.o

@@ -16,7 +16,9 @@ DEPENDPATH += $$PWD/SFML/include
 
 SOURCES += \
         Objects/button.cpp \
+        Objects/damageobject.cpp \
         Objects/enemy.cpp \
+        Objects/light.cpp \
         Objects/player.cpp \
         Objects/unit.cpp \
         Scenes/game.cpp \
@@ -35,7 +37,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Objects/button.h \
+    Objects/damageobject.h \
     Objects/enemy.h \
+    Objects/light.h \
     Objects/player.h \
     Objects/unit.h \
     Scenes/game.h \

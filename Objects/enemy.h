@@ -18,6 +18,10 @@ public:
 protected:
     void draw(RenderTarget &target, RenderStates states) const override;
 
+
+    // DamageObject interface
+public:
+    FloatRect getGlobalBounds() override;
 };
 
 #endif // ENEMY_H
