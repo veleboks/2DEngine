@@ -1,7 +1,5 @@
 #include "light.h"
 
-
-
 Light::Light(Vector2f pos, float angle)
 {
     DAMAGE = 50.0;
@@ -28,7 +26,3 @@ void Light::logic()
     sprite->rotate(0.05 * Globals::gameTime);
 }
 
-FloatRect Light::getGlobalBounds()
-{
-
-}

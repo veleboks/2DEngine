@@ -14,6 +14,7 @@ public:
     virtual FloatRect getGlobalBounds() = 0;
     float getDamage();
     void setDamage(float value);
+    float getGlobalDamage(DamageObject * d);
 
     // Drawable interface
 protected:

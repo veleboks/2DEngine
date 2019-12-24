@@ -23,7 +23,7 @@ public:
 
     // DamageObject interface
 public:
-    FloatRect getGlobalBounds() override;
+    FloatRect getGlobalBounds() override {return sprite->getGlobalBounds();}
 };
 
 #endif // LIGHT_H

@@ -14,7 +14,6 @@ Game::Game()
     spawner = new SpawnControll();
     player = new Player(Vector2f(100, 100));
     addObject(player);
-    addEnemy(new Enemy(Vector2f(100, 100)));
     prevSpawnTime = 0;
 }
 
@@ -29,7 +28,16 @@ void Game::sceneLogic()
     sceneTime += Globals::gameTime/1000;
     Enemy::playerPos = player->getCenter();
     spawnEnemy();
-
-
+    clearObjects();
+    addObject(player);
+    for (auto it = enemies.begin(); it != enemies.end();) {
+        float damage = player->getGlobalDamage(*it);
+        (*it)->damage(damage);
+        if ((*it)->getHP() <= 0) enemies.erase(it);
+        else {
+            addObject(*it);
+            ++it;
+        }
+    }
 }
 

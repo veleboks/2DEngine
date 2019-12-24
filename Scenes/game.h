@@ -11,12 +11,12 @@
 class Game : public Scene
 {
 private:
-    float spawnDelay = 1; // in seconds
+    float spawnDelay = 0.1; // in seconds
     float sceneTime; // in seconds
     float prevSpawnTime;
     vector<Enemy *> enemies;
     SpawnControll * spawner;
-    Player *player;
+    Player * player;
     void spawnEnemy();
 public:
     Game();

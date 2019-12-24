@@ -1,5 +1,10 @@
 #include "scene.h"
 
+void Scene::clearObjects()
+{
+    objects.clear();
+}
+
 void Scene::addObject(GameObject *object)
 {
     objects.push_back(object);
