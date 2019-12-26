@@ -5,6 +5,7 @@
 #include "enemy.h"
 #include "globals.h"
 #include "cmath"
+#include <float.h>
 
 class Light : public DamageObject
 {

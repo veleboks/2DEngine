@@ -6,7 +6,7 @@ Player::Player(Vector2f pos, float speed)
     sprite.setSize(Vector2f(40, 40));
     sprite.setFillColor(Color::Blue);
     SPEED = speed;
-    addDamagedObj(new Light(pos, 0));
+    addDamagedObj(new Light(pos, 270));
 //    addDamagedObj(new Light(pos, 90));
 //    addDamagedObj(new Light(pos, 180));
 //    addDamagedObj(new Light(pos, 270));
