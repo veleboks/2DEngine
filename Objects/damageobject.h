@@ -21,7 +21,7 @@ protected:
     vector<DamageObject*> damagedObjs;
     virtual void draw(RenderTarget &target, RenderStates states) const = 0;
     void addDamagedObj(DamageObject * obj){damagedObjs.push_back(obj);}
-    bool checkIntersection(DamageObject * dObj) {return getGlobalBounds().intersects(dObj->getGlobalBounds());}
+    virtual bool checkIntersection(DamageObject * dObj) {return getGlobalBounds().intersects(dObj->getGlobalBounds());}
     // GameObject interface
 public:
     virtual void logic() = 0;

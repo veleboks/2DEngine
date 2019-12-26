@@ -4,6 +4,7 @@
 #include "damageobject.h"
 #include "enemy.h"
 #include "globals.h"
+#include "cmath"
 
 class Light : public DamageObject
 {
@@ -24,6 +25,10 @@ public:
     // DamageObject interface
 public:
     FloatRect getGlobalBounds() override {return sprite->getGlobalBounds();}
+
+    // DamageObject interface
+protected:
+    bool checkIntersection(DamageObject *dObj);
 };
 
 #endif // LIGHT_H
