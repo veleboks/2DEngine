@@ -3,7 +3,7 @@
 
 #include "unit.h"
 #include "globals.h"
-#include "light.h"
+#include "lasergun.h"
 
 class Player : public Unit
 {
@@ -22,6 +22,7 @@ public:
     // DamageObject interface
 public:
     FloatRect getGlobalBounds() override;
+    Vector2f getPosition() override {sprite.getPosition();}
 };
 
 #endif // PLAYER_H

@@ -11,8 +11,9 @@ class DamageObject : public GameObject
 protected:
     float DAMAGE;
 public:
+    virtual Vector2f getPosition() = 0;
     virtual FloatRect getGlobalBounds() = 0;
-    float getDamage();
+    virtual float getDamage();
     void setDamage(float value);
     float getGlobalDamage(DamageObject * d);
 

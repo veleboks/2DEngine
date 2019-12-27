@@ -50,7 +50,9 @@ OBJECTS_DIR   = release
 SOURCES       = Objects\button.cpp \
 		Objects\damageobject.cpp \
 		Objects\enemy.cpp \
-		Objects\light.cpp \
+		Objects\gun.cpp \
+		Objects\laser.cpp \
+		Objects\lasergun.cpp \
 		Objects\player.cpp \
 		Objects\unit.cpp \
 		Scenes\game.cpp \
@@ -64,7 +66,9 @@ SOURCES       = Objects\button.cpp \
 OBJECTS       = release/button.o \
 		release/damageobject.o \
 		release/enemy.o \
-		release/light.o \
+		release/gun.o \
+		release/laser.o \
+		release/lasergun.o \
 		release/player.o \
 		release/unit.o \
 		release/game.o \
@@ -79,7 +83,9 @@ OBJECTS       = release/button.o \
 DIST          =  Objects\button.h \
 		Objects\damageobject.h \
 		Objects\enemy.h \
-		Objects\light.h \
+		Objects\gun.h \
+		Objects\laser.h \
+		Objects\lasergun.h \
 		Objects\player.h \
 		Objects\unit.h \
 		Scenes\game.h \
@@ -91,7 +97,9 @@ DIST          =  Objects\button.h \
 		scene.h Objects\button.cpp \
 		Objects\damageobject.cpp \
 		Objects\enemy.cpp \
-		Objects\light.cpp \
+		Objects\gun.cpp \
+		Objects\laser.cpp \
+		Objects\lasergun.cpp \
 		Objects\player.cpp \
 		Objects\unit.cpp \
 		Scenes\game.cpp \
@@ -121,10 +129,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) testsfml.zip $(SOURCES) $(DIST) testsfml.pro C:\Qt\5.12.5\mingw73_32\mkspecs\features\spec_pre.prf C:\Qt\5.12.5\mingw73_32\mkspecs\qdevice.pri C:\Qt\5.12.5\mingw73_32\mkspecs\features\device_config.prf C:\Qt\5.12.5\mingw73_32\mkspecs\common\sanitize.conf C:\Qt\5.12.5\mingw73_32\mkspecs\common\gcc-base.conf C:\Qt\5.12.5\mingw73_32\mkspecs\common\g++-base.conf C:\Qt\5.12.5\mingw73_32\mkspecs\common\angle.conf C:\Qt\5.12.5\mingw73_32\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.12.5\mingw73_32\mkspecs\common\windows-vulkan.conf C:\Qt\5.12.5\mingw73_32\mkspecs\common\g++-win32.conf C:\Qt\5.12.5\mingw73_32\mkspecs\qconfig.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_core.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_help.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_location.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_network.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\features\qt_functions.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\qt_config.prf C:\Qt\5.12.5\mingw73_32\mkspecs\win32-g++\qmake.conf C:\Qt\5.12.5\mingw73_32\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.12.5\mingw73_32\mkspecs\features\exclusive_builds.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\toolchain.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\default_pre.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\win32\default_pre.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\resolve_config.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\default_post.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\build_pass.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\win32\console.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\qml_debug.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\precompile_header.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\warn_on.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\qt.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\resources.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\moc.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\win32\opengl.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\qmake_use.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\file_copies.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\testcase_targets.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\exceptions.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\yacc.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\lex.prf testsfml.pro C:\Qt\5.12.5\mingw73_32\lib\Qt5Gui.prl C:\Qt\5.12.5\mingw73_32\lib\Qt5Core.prl    C:\Qt\5.12.5\mingw73_32\mkspecs\features\data\dummy.cpp Objects\button.h Objects\damageobject.h Objects\enemy.h Objects\light.h Objects\player.h Objects\unit.h Scenes\game.h Scenes\menu.h Utils\spawncontroll.h engine.h gameobject.h globals.h scene.h  Objects\button.cpp Objects\damageobject.cpp Objects\enemy.cpp Objects\light.cpp Objects\player.cpp Objects\unit.cpp Scenes\game.cpp Scenes\menu.cpp Utils\spawncontroll.cpp engine.cpp gameobject.cpp globals.cpp main.cpp scene.cpp    
+	$(ZIP) testsfml.zip $(SOURCES) $(DIST) testsfml.pro C:\Qt\5.12.5\mingw73_32\mkspecs\features\spec_pre.prf C:\Qt\5.12.5\mingw73_32\mkspecs\qdevice.pri C:\Qt\5.12.5\mingw73_32\mkspecs\features\device_config.prf C:\Qt\5.12.5\mingw73_32\mkspecs\common\sanitize.conf C:\Qt\5.12.5\mingw73_32\mkspecs\common\gcc-base.conf C:\Qt\5.12.5\mingw73_32\mkspecs\common\g++-base.conf C:\Qt\5.12.5\mingw73_32\mkspecs\common\angle.conf C:\Qt\5.12.5\mingw73_32\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.12.5\mingw73_32\mkspecs\common\windows-vulkan.conf C:\Qt\5.12.5\mingw73_32\mkspecs\common\g++-win32.conf C:\Qt\5.12.5\mingw73_32\mkspecs\qconfig.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_core.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_help.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_location.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_network.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.12.5\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.12.5\mingw73_32\mkspecs\features\qt_functions.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\qt_config.prf C:\Qt\5.12.5\mingw73_32\mkspecs\win32-g++\qmake.conf C:\Qt\5.12.5\mingw73_32\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.12.5\mingw73_32\mkspecs\features\exclusive_builds.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\toolchain.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\default_pre.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\win32\default_pre.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\resolve_config.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\default_post.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\build_pass.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\win32\console.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\qml_debug.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\precompile_header.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\warn_on.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\qt.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\resources.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\moc.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\win32\opengl.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\qmake_use.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\file_copies.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\testcase_targets.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\exceptions.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\yacc.prf C:\Qt\5.12.5\mingw73_32\mkspecs\features\lex.prf testsfml.pro C:\Qt\5.12.5\mingw73_32\lib\Qt5Gui.prl C:\Qt\5.12.5\mingw73_32\lib\Qt5Core.prl    C:\Qt\5.12.5\mingw73_32\mkspecs\features\data\dummy.cpp Objects\button.h Objects\damageobject.h Objects\enemy.h Objects\gun.h Objects\laser.h Objects\lasergun.h Objects\player.h Objects\unit.h Scenes\game.h Scenes\menu.h Utils\spawncontroll.h engine.h gameobject.h globals.h scene.h  Objects\button.cpp Objects\damageobject.cpp Objects\enemy.cpp Objects\gun.cpp Objects\laser.cpp Objects\lasergun.cpp Objects\player.cpp Objects\unit.cpp Scenes\game.cpp Scenes\menu.cpp Utils\spawncontroll.cpp engine.cpp gameobject.cpp globals.cpp main.cpp scene.cpp    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\button.o release\damageobject.o release\enemy.o release\light.o release\player.o release\unit.o release\game.o release\menu.o release\spawncontroll.o release\engine.o release\gameobject.o release\globals.o release\main.o release\scene.o
+	-$(DEL_FILE) release\button.o release\damageobject.o release\enemy.o release\gun.o release\laser.o release\lasergun.o release\player.o release\unit.o release\game.o release\menu.o release\spawncontroll.o release\engine.o release\gameobject.o release\globals.o release\main.o release\scene.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -330,6 +338,7 @@ release/damageobject.o: Objects/damageobject.cpp Objects/damageobject.h \
 
 release/enemy.o: Objects/enemy.cpp Objects/enemy.h \
 		Objects/unit.h \
+		Objects/damageobject.h \
 		gameobject.h \
 		SFML/include/SFML/Graphics.hpp \
 		SFML/include/SFML/Window.hpp \
@@ -410,7 +419,91 @@ release/enemy.o: Objects/enemy.cpp Objects/enemy.h \
 		globals.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\enemy.o Objects\enemy.cpp
 
-release/light.o: Objects/light.cpp Objects/light.h \
+release/gun.o: Objects/gun.cpp Objects/gun.h \
+		globals.h \
+		SFML/include/SFML/Graphics.hpp \
+		SFML/include/SFML/Window.hpp \
+		SFML/include/SFML/System.hpp \
+		SFML/include/SFML/Config.hpp \
+		SFML/include/SFML/System/Clock.hpp \
+		SFML/include/SFML/System/Export.hpp \
+		SFML/include/SFML/System/Time.hpp \
+		SFML/include/SFML/System/Err.hpp \
+		SFML/include/SFML/System/FileInputStream.hpp \
+		SFML/include/SFML/System/InputStream.hpp \
+		SFML/include/SFML/System/NonCopyable.hpp \
+		SFML/include/SFML/System/Lock.hpp \
+		SFML/include/SFML/System/MemoryInputStream.hpp \
+		SFML/include/SFML/System/Mutex.hpp \
+		SFML/include/SFML/System/Sleep.hpp \
+		SFML/include/SFML/System/String.hpp \
+		SFML/include/SFML/System/Utf.hpp \
+		SFML/include/SFML/System/Utf.inl \
+		SFML/include/SFML/System/String.inl \
+		SFML/include/SFML/System/Thread.hpp \
+		SFML/include/SFML/System/Thread.inl \
+		SFML/include/SFML/System/ThreadLocal.hpp \
+		SFML/include/SFML/System/ThreadLocalPtr.hpp \
+		SFML/include/SFML/System/ThreadLocalPtr.inl \
+		SFML/include/SFML/System/Vector2.hpp \
+		SFML/include/SFML/System/Vector2.inl \
+		SFML/include/SFML/System/Vector3.hpp \
+		SFML/include/SFML/System/Vector3.inl \
+		SFML/include/SFML/Window/Clipboard.hpp \
+		SFML/include/SFML/Window/Export.hpp \
+		SFML/include/SFML/Window/Context.hpp \
+		SFML/include/SFML/Window/GlResource.hpp \
+		SFML/include/SFML/Window/ContextSettings.hpp \
+		SFML/include/SFML/Window/Cursor.hpp \
+		SFML/include/SFML/Window/Event.hpp \
+		SFML/include/SFML/Window/Joystick.hpp \
+		SFML/include/SFML/Window/Keyboard.hpp \
+		SFML/include/SFML/Window/Mouse.hpp \
+		SFML/include/SFML/Window/Sensor.hpp \
+		SFML/include/SFML/Window/Touch.hpp \
+		SFML/include/SFML/Window/VideoMode.hpp \
+		SFML/include/SFML/Window/Window.hpp \
+		SFML/include/SFML/Window/WindowBase.hpp \
+		SFML/include/SFML/Window/Vulkan.hpp \
+		SFML/include/SFML/Window/WindowHandle.hpp \
+		SFML/include/SFML/Window/WindowStyle.hpp \
+		SFML/include/SFML/Graphics/BlendMode.hpp \
+		SFML/include/SFML/Graphics/Export.hpp \
+		SFML/include/SFML/Graphics/CircleShape.hpp \
+		SFML/include/SFML/Graphics/Shape.hpp \
+		SFML/include/SFML/Graphics/Drawable.hpp \
+		SFML/include/SFML/Graphics/RenderStates.hpp \
+		SFML/include/SFML/Graphics/Transform.hpp \
+		SFML/include/SFML/Graphics/Rect.hpp \
+		SFML/include/SFML/Graphics/Rect.inl \
+		SFML/include/SFML/Graphics/Transformable.hpp \
+		SFML/include/SFML/Graphics/VertexArray.hpp \
+		SFML/include/SFML/Graphics/Vertex.hpp \
+		SFML/include/SFML/Graphics/Color.hpp \
+		SFML/include/SFML/Graphics/PrimitiveType.hpp \
+		SFML/include/SFML/Graphics/ConvexShape.hpp \
+		SFML/include/SFML/Graphics/Font.hpp \
+		SFML/include/SFML/Graphics/Glyph.hpp \
+		SFML/include/SFML/Graphics/Texture.hpp \
+		SFML/include/SFML/Graphics/Image.hpp \
+		SFML/include/SFML/Graphics/RectangleShape.hpp \
+		SFML/include/SFML/Graphics/RenderTarget.hpp \
+		SFML/include/SFML/Graphics/View.hpp \
+		SFML/include/SFML/Graphics/RenderTexture.hpp \
+		SFML/include/SFML/Graphics/RenderWindow.hpp \
+		SFML/include/SFML/Graphics/Shader.hpp \
+		SFML/include/SFML/Graphics/Glsl.hpp \
+		SFML/include/SFML/Graphics/Glsl.inl \
+		SFML/include/SFML/Graphics/Sprite.hpp \
+		SFML/include/SFML/Graphics/Text.hpp \
+		SFML/include/SFML/Graphics/VertexBuffer.hpp \
+		Objects/enemy.h \
+		Objects/unit.h \
+		Objects/damageobject.h \
+		gameobject.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\gun.o Objects\gun.cpp
+
+release/laser.o: Objects/laser.cpp Objects/laser.h \
 		Objects/damageobject.h \
 		gameobject.h \
 		SFML/include/SFML/Graphics.hpp \
@@ -488,11 +581,101 @@ release/light.o: Objects/light.cpp Objects/light.h \
 		SFML/include/SFML/Graphics/Glsl.inl \
 		SFML/include/SFML/Graphics/Sprite.hpp \
 		SFML/include/SFML/Graphics/Text.hpp \
-		SFML/include/SFML/Graphics/VertexBuffer.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\light.o Objects\light.cpp
+		SFML/include/SFML/Graphics/VertexBuffer.hpp \
+		Objects/enemy.h \
+		Objects/unit.h \
+		globals.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\laser.o Objects\laser.cpp
+
+release/lasergun.o: Objects/lasergun.cpp Objects/lasergun.h \
+		Objects/gun.h \
+		globals.h \
+		SFML/include/SFML/Graphics.hpp \
+		SFML/include/SFML/Window.hpp \
+		SFML/include/SFML/System.hpp \
+		SFML/include/SFML/Config.hpp \
+		SFML/include/SFML/System/Clock.hpp \
+		SFML/include/SFML/System/Export.hpp \
+		SFML/include/SFML/System/Time.hpp \
+		SFML/include/SFML/System/Err.hpp \
+		SFML/include/SFML/System/FileInputStream.hpp \
+		SFML/include/SFML/System/InputStream.hpp \
+		SFML/include/SFML/System/NonCopyable.hpp \
+		SFML/include/SFML/System/Lock.hpp \
+		SFML/include/SFML/System/MemoryInputStream.hpp \
+		SFML/include/SFML/System/Mutex.hpp \
+		SFML/include/SFML/System/Sleep.hpp \
+		SFML/include/SFML/System/String.hpp \
+		SFML/include/SFML/System/Utf.hpp \
+		SFML/include/SFML/System/Utf.inl \
+		SFML/include/SFML/System/String.inl \
+		SFML/include/SFML/System/Thread.hpp \
+		SFML/include/SFML/System/Thread.inl \
+		SFML/include/SFML/System/ThreadLocal.hpp \
+		SFML/include/SFML/System/ThreadLocalPtr.hpp \
+		SFML/include/SFML/System/ThreadLocalPtr.inl \
+		SFML/include/SFML/System/Vector2.hpp \
+		SFML/include/SFML/System/Vector2.inl \
+		SFML/include/SFML/System/Vector3.hpp \
+		SFML/include/SFML/System/Vector3.inl \
+		SFML/include/SFML/Window/Clipboard.hpp \
+		SFML/include/SFML/Window/Export.hpp \
+		SFML/include/SFML/Window/Context.hpp \
+		SFML/include/SFML/Window/GlResource.hpp \
+		SFML/include/SFML/Window/ContextSettings.hpp \
+		SFML/include/SFML/Window/Cursor.hpp \
+		SFML/include/SFML/Window/Event.hpp \
+		SFML/include/SFML/Window/Joystick.hpp \
+		SFML/include/SFML/Window/Keyboard.hpp \
+		SFML/include/SFML/Window/Mouse.hpp \
+		SFML/include/SFML/Window/Sensor.hpp \
+		SFML/include/SFML/Window/Touch.hpp \
+		SFML/include/SFML/Window/VideoMode.hpp \
+		SFML/include/SFML/Window/Window.hpp \
+		SFML/include/SFML/Window/WindowBase.hpp \
+		SFML/include/SFML/Window/Vulkan.hpp \
+		SFML/include/SFML/Window/WindowHandle.hpp \
+		SFML/include/SFML/Window/WindowStyle.hpp \
+		SFML/include/SFML/Graphics/BlendMode.hpp \
+		SFML/include/SFML/Graphics/Export.hpp \
+		SFML/include/SFML/Graphics/CircleShape.hpp \
+		SFML/include/SFML/Graphics/Shape.hpp \
+		SFML/include/SFML/Graphics/Drawable.hpp \
+		SFML/include/SFML/Graphics/RenderStates.hpp \
+		SFML/include/SFML/Graphics/Transform.hpp \
+		SFML/include/SFML/Graphics/Rect.hpp \
+		SFML/include/SFML/Graphics/Rect.inl \
+		SFML/include/SFML/Graphics/Transformable.hpp \
+		SFML/include/SFML/Graphics/VertexArray.hpp \
+		SFML/include/SFML/Graphics/Vertex.hpp \
+		SFML/include/SFML/Graphics/Color.hpp \
+		SFML/include/SFML/Graphics/PrimitiveType.hpp \
+		SFML/include/SFML/Graphics/ConvexShape.hpp \
+		SFML/include/SFML/Graphics/Font.hpp \
+		SFML/include/SFML/Graphics/Glyph.hpp \
+		SFML/include/SFML/Graphics/Texture.hpp \
+		SFML/include/SFML/Graphics/Image.hpp \
+		SFML/include/SFML/Graphics/RectangleShape.hpp \
+		SFML/include/SFML/Graphics/RenderTarget.hpp \
+		SFML/include/SFML/Graphics/View.hpp \
+		SFML/include/SFML/Graphics/RenderTexture.hpp \
+		SFML/include/SFML/Graphics/RenderWindow.hpp \
+		SFML/include/SFML/Graphics/Shader.hpp \
+		SFML/include/SFML/Graphics/Glsl.hpp \
+		SFML/include/SFML/Graphics/Glsl.inl \
+		SFML/include/SFML/Graphics/Sprite.hpp \
+		SFML/include/SFML/Graphics/Text.hpp \
+		SFML/include/SFML/Graphics/VertexBuffer.hpp \
+		Objects/enemy.h \
+		Objects/unit.h \
+		Objects/damageobject.h \
+		gameobject.h \
+		Objects/laser.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\lasergun.o Objects\lasergun.cpp
 
 release/player.o: Objects/player.cpp Objects/player.h \
 		Objects/unit.h \
+		Objects/damageobject.h \
 		gameobject.h \
 		SFML/include/SFML/Graphics.hpp \
 		SFML/include/SFML/Window.hpp \
@@ -570,10 +753,15 @@ release/player.o: Objects/player.cpp Objects/player.h \
 		SFML/include/SFML/Graphics/Sprite.hpp \
 		SFML/include/SFML/Graphics/Text.hpp \
 		SFML/include/SFML/Graphics/VertexBuffer.hpp \
-		globals.h
+		globals.h \
+		Objects/lasergun.h \
+		Objects/gun.h \
+		Objects/enemy.h \
+		Objects/laser.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\player.o Objects\player.cpp
 
 release/unit.o: Objects/unit.cpp Objects/unit.h \
+		Objects/damageobject.h \
 		gameobject.h \
 		SFML/include/SFML/Graphics.hpp \
 		SFML/include/SFML/Window.hpp \
@@ -735,10 +923,12 @@ release/game.o: Scenes/game.cpp Scenes/game.h \
 		globals.h \
 		Objects/player.h \
 		Objects/unit.h \
+		Objects/damageobject.h \
+		Objects/lasergun.h \
+		Objects/gun.h \
 		Objects/enemy.h \
-		Utils/spawncontroll.h \
-		Objects/light.h \
-		Objects/damageobject.h
+		Objects/laser.h \
+		Utils/spawncontroll.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\game.o Scenes\game.cpp
 
 release/menu.o: Scenes/menu.cpp Scenes/menu.h
@@ -908,10 +1098,12 @@ release/engine.o: engine.cpp engine.h \
 		Scenes/game.h \
 		Objects/player.h \
 		Objects/unit.h \
+		Objects/damageobject.h \
+		Objects/lasergun.h \
+		Objects/gun.h \
 		Objects/enemy.h \
-		Utils/spawncontroll.h \
-		Objects/light.h \
-		Objects/damageobject.h
+		Objects/laser.h \
+		Utils/spawncontroll.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\engine.o engine.cpp
 
 release/gameobject.o: gameobject.cpp gameobject.h \
@@ -1156,10 +1348,12 @@ release/main.o: main.cpp engine.h \
 		Scenes/game.h \
 		Objects/player.h \
 		Objects/unit.h \
+		Objects/damageobject.h \
+		Objects/lasergun.h \
+		Objects/gun.h \
 		Objects/enemy.h \
-		Utils/spawncontroll.h \
-		Objects/light.h \
-		Objects/damageobject.h
+		Objects/laser.h \
+		Utils/spawncontroll.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 release/scene.o: scene.cpp scene.h \

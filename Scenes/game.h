@@ -5,7 +5,7 @@
 #include "Objects/player.h"
 #include "Objects/enemy.h"
 #include "Utils/spawncontroll.h"
-#include "Objects/light.h"
+#include "Objects/laser.h"
 #include "Objects/damageobject.h"
 
 class Game : public Scene

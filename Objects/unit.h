@@ -16,6 +16,7 @@ public:
     void damage(float HP);
     // DamageObject interface
 public:
+    virtual Vector2f getPosition() override = 0;
     virtual FloatRect getGlobalBounds() override = 0;
     float getHP();
     void setHP(float value);

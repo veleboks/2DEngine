@@ -7,13 +7,13 @@
 #include "cmath"
 #include <float.h>
 
-class Light : public DamageObject
+class Laser : public DamageObject
 {
 private:
     RectangleShape * sprite;
 public:
-    Light(Vector2f pos, float angle);
-    ~Light();
+    Laser(Vector2f pos, float angle);
+    ~Laser();
 
     // Drawable interface
 protected:
@@ -25,7 +25,9 @@ public:
 
     // DamageObject interface
 public:
+    float getDamage() override {return DAMAGE * Globals::gameTime;}
     FloatRect getGlobalBounds() override {return sprite->getGlobalBounds();}
+    Vector2f getPosition() override {sprite->getPosition();}
 
     // DamageObject interface
 protected:

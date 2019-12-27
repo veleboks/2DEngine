@@ -1,7 +1,9 @@
 debug/button.o
 debug/damageobject.o
 debug/enemy.o
-debug/light.o
+debug/gun.o
+debug/laser.o
+debug/lasergun.o
 debug/player.o
 debug/unit.o
 debug/game.o

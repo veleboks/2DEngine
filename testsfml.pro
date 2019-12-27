@@ -18,7 +18,9 @@ SOURCES += \
         Objects/button.cpp \
         Objects/damageobject.cpp \
         Objects/enemy.cpp \
-        Objects/light.cpp \
+        Objects/gun.cpp \
+        Objects/laser.cpp \
+        Objects/lasergun.cpp \
         Objects/player.cpp \
         Objects/unit.cpp \
         Scenes/game.cpp \
@@ -39,7 +41,9 @@ HEADERS += \
     Objects/button.h \
     Objects/damageobject.h \
     Objects/enemy.h \
-    Objects/light.h \
+    Objects/gun.h \
+    Objects/laser.h \
+    Objects/lasergun.h \
     Objects/player.h \
     Objects/unit.h \
     Scenes/game.h \

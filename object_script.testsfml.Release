@@ -1,7 +1,9 @@
 release/button.o
 release/damageobject.o
 release/enemy.o
-release/light.o
+release/gun.o
+release/laser.o
+release/lasergun.o
 release/player.o
 release/unit.o
 release/game.o

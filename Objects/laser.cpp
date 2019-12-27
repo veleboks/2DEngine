@@ -1,8 +1,8 @@
-#include "light.h"
+#include "laser.h"
 
-Light::Light(Vector2f pos, float angle)
+Laser::Laser(Vector2f pos, float angle)
 {
-    DAMAGE = 50.0;
+    DAMAGE = 0.5;
     sprite = new RectangleShape();
     sprite->setSize(Vector2f(1000, 5));
     sprite->setOrigin(0, 3);
@@ -11,23 +11,21 @@ Light::Light(Vector2f pos, float angle)
     sprite->rotate(angle);
 }
 
-Light::~Light()
+Laser::~Laser()
 {
     delete sprite;
 }
 
-void Light::draw(RenderTarget &target, RenderStates states) const
+void Laser::draw(RenderTarget &target, RenderStates states) const
 {
     target.draw(*sprite, states);
 }
 
-void Light::logic()
+void Laser::logic()
 {
-    sprite->setPosition(Enemy::playerPos);
-    sprite->rotate(0.05 * Globals::gameTime);
 }
 
-bool Light::checkIntersection(DamageObject *dObj)
+bool Laser::checkIntersection(DamageObject *dObj)
 {
     float rayAngleTan = tan(sprite->getRotation() * 3.14 / 180.0);
     float rayAngleCos = cos(sprite->getRotation() * 3.14 / 180.0);
