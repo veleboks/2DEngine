@@ -11,7 +11,7 @@
 class Game : public Scene
 {
 private:
-    float spawnDelay = 1; // in seconds
+    float spawnDelay = 0.5; // in seconds
     float sceneTime; // in seconds
     float prevSpawnTime;
     vector<Enemy *> enemies;

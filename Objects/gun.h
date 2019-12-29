@@ -3,6 +3,7 @@
 
 #include "globals.h"
 #include "enemy.h"
+#include "cmath"
 
 class Gun : public DamageObject
 {
