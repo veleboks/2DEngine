@@ -20,6 +20,10 @@ public:
     virtual FloatRect getGlobalBounds() override = 0;
     float getHP();
     void setHP(float value);
+
+    // DamageObject interface
+public:
+    float getRotation() override = 0;
 };
 
 #endif // UNIT_H

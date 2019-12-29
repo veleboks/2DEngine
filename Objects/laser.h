@@ -1,7 +1,7 @@
 #ifndef LIGHT_H
 #define LIGHT_H
 
-#include "damageobject.h"
+#include "gun.h"
 #include "enemy.h"
 #include "globals.h"
 #include "cmath"
@@ -12,7 +12,7 @@ class Laser : public DamageObject
 private:
     RectangleShape * sprite;
 public:
-    Laser(Vector2f pos, float angle);
+    Laser(Vector2f pos, float angle, DamageObject * prev);
     ~Laser();
 
     // Drawable interface
@@ -32,6 +32,10 @@ public:
     // DamageObject interface
 protected:
     bool checkIntersection(DamageObject *dObj);
+
+    // DamageObject interface
+public:
+    float getRotation() override {return sprite->getRotation();}
 };
 
 #endif // LIGHT_H

@@ -16,6 +16,6 @@ void LaserGun::draw(RenderTarget &target, RenderStates states) const
 void LaserGun::onClick()
 {
     if (damagedObjs.empty()) {
-        damagedObjs.push_back(new Laser(sprite->getPosition(), sprite->getRotation()));
+        damagedObjs.push_back(new Laser(getPosition(), getRotation(), this));
     }
 }

@@ -1,7 +1,8 @@
 #include "laser.h"
 
-Laser::Laser(Vector2f pos, float angle)
+Laser::Laser(Vector2f pos, float angle, DamageObject * prev)
 {
+    this->prev = prev;
     DAMAGE = 0.5;
     sprite = new RectangleShape();
     sprite->setSize(Vector2f(1000, 5));
@@ -23,6 +24,8 @@ void Laser::draw(RenderTarget &target, RenderStates states) const
 
 void Laser::logic()
 {
+    sprite->setPosition(prev->getPosition());
+    sprite->rotate(prev->getRotation() - sprite->getRotation());
 }
 
 bool Laser::checkIntersection(DamageObject *dObj)

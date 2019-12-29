@@ -1,4 +1,4 @@
-#ifndef PLAYER_H
+    #ifndef PLAYER_H
 #define PLAYER_H
 
 #include "unit.h"
@@ -22,7 +22,11 @@ public:
     // DamageObject interface
 public:
     FloatRect getGlobalBounds() override;
-    Vector2f getPosition() override {sprite.getPosition();}
+    Vector2f getPosition() override {return sprite.getPosition();}
+
+    // DamageObject interface
+public:
+    float getRotation() override {return sprite.getRotation();}
 };
 
 #endif // PLAYER_H

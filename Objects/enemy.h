@@ -23,6 +23,10 @@ protected:
 public:
     FloatRect getGlobalBounds() override;
     Vector2f getPosition() override {sprite.getPosition();}
+
+    // DamageObject interface
+public:
+    float getRotation() override {return sprite.getRotation();}
 };
 
 #endif // ENEMY_H

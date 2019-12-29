@@ -9,13 +9,16 @@ using namespace std;
 class DamageObject : public GameObject
 {
 protected:
+    DamageObject * prev;
     float DAMAGE;
 public:
+    virtual float getRotation() = 0;
     virtual Vector2f getPosition() = 0;
     virtual FloatRect getGlobalBounds() = 0;
     virtual float getDamage();
     void setDamage(float value);
     float getGlobalDamage(DamageObject * d);
+
 
     // Drawable interface
 protected:
