@@ -12,6 +12,7 @@ class Globals
 public:
     static float gameTime;
     static RenderWindow *mainWindow;
+    static View * mainView;
     static Font getFont(String nameFont = "Resources/Fonts/main.ttf");
 };
 

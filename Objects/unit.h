@@ -20,7 +20,7 @@ public:
     virtual FloatRect getGlobalBounds() override = 0;
     float getHP();
     void setHP(float value);
-
+    float getSpeed() {return SPEED;}
     // DamageObject interface
 public:
     float getRotation() override = 0;

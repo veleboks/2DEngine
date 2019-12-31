@@ -5,6 +5,7 @@
 #include <ctime>
 #include <cstdlib>
 #include "globals.h"
+#include "Objects/enemy.h"
 
 using namespace std;
 using namespace sf;
