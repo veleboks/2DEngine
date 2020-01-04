@@ -12,12 +12,14 @@ using namespace sf;
 class Scene
 {
 public:
+
     void clearObjects();
     void addObject(GameObject* object);
     void addObject(vector<GameObject*> obj);
     void logic();
     void render();
 private:
+    bool available = false;
     vector<GameObject*> objects;
 protected:
     virtual void sceneLogic() = 0;

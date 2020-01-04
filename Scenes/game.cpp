@@ -39,5 +39,34 @@ void Game::sceneLogic()
             ++it;
         }
     }
+    smoothViewMove();
+}
+
+void Game::smoothViewMove()
+{
+    Vector2f viewMoving = Globals::mainWindow->getView().getCenter();
+    if (abs(Enemy::playerPos.x - viewMoving.x) < maxLen) {
+        if (Enemy::playerPos.x > viewMoving.x)
+            viewMoving = Vector2f(viewMoving.x + beginViewSpeed, viewMoving.y);
+        if (Enemy::playerPos.x < viewMoving.x)
+            viewMoving = Vector2f(viewMoving.x - beginViewSpeed, viewMoving.y);
+    } else {
+        if (Enemy::playerPos.x > viewMoving.x)
+            viewMoving = Vector2f(viewMoving.x + finalViewSpeed, viewMoving.y);
+        if (Enemy::playerPos.x < viewMoving.x)
+            viewMoving = Vector2f(viewMoving.x - finalViewSpeed, viewMoving.y);
+    }
+    if (abs(Enemy::playerPos.y - viewMoving.y) < maxLen) {
+        if (Enemy::playerPos.y > viewMoving.y)
+            viewMoving = Vector2f(viewMoving.x, viewMoving.y + beginViewSpeed);
+        if (Enemy::playerPos.y < viewMoving.y)
+            viewMoving = Vector2f(viewMoving.x, viewMoving.y - beginViewSpeed);
+    } else {
+        if (Enemy::playerPos.y > viewMoving.y)
+            viewMoving = Vector2f(viewMoving.x, viewMoving.y + finalViewSpeed);
+        if (Enemy::playerPos.y < viewMoving.y)
+            viewMoving = Vector2f(viewMoving.x, viewMoving.y - finalViewSpeed);
+    }
+    Globals::mainWindow->setView(View(viewMoving, Vector2f(Globals::mainWindow->getSize())));
 }
 

@@ -24,17 +24,12 @@ public:
     void addObject(Scene* object);
     void addObject(vector<Scene*> obj);
 private:
-    const float beginViewSpeed = 0.15;
-    const float finalViewSpeed = 0.5;
-    const float maxLen = 30; // max len with center of a view and player
     Clock clock;
-    vector<Scene*> scenes; // объекты для отрисовки
+    vector<Scene*> scenes; // сцены для отрисовки
     ///Обработка событий
     void processingEvents();
-    void smoothViewMove();
     ///Окно
     RenderWindow * window;
-    View * view;
     Event event;
     void update();
 protected:
