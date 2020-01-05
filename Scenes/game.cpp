@@ -44,29 +44,42 @@ void Game::sceneLogic()
 
 void Game::smoothViewMove()
 {
-    Vector2f viewMoving = Globals::mainWindow->getView().getCenter();
+    static Vector2f prevMouseMove;
+
+    Vector2f viewMoving = Vector2f(Globals::mainWindow->getView().getCenter().x - prevMouseMove.x,
+                                   Globals::mainWindow->getView().getCenter().y - prevMouseMove.y);
+
+    float bs = beginViewSpeed * Globals::gameTime;
+    float fs = finalViewSpeed * Globals::gameTime;
+
     if (abs(Enemy::playerPos.x - viewMoving.x) < maxLen) {
         if (Enemy::playerPos.x > viewMoving.x)
-            viewMoving = Vector2f(viewMoving.x + beginViewSpeed, viewMoving.y);
+            viewMoving = Vector2f(viewMoving.x + bs, viewMoving.y);
         if (Enemy::playerPos.x < viewMoving.x)
-            viewMoving = Vector2f(viewMoving.x - beginViewSpeed, viewMoving.y);
+            viewMoving = Vector2f(viewMoving.x - bs, viewMoving.y);
     } else {
         if (Enemy::playerPos.x > viewMoving.x)
-            viewMoving = Vector2f(viewMoving.x + finalViewSpeed, viewMoving.y);
+            viewMoving = Vector2f(viewMoving.x + fs, viewMoving.y);
         if (Enemy::playerPos.x < viewMoving.x)
-            viewMoving = Vector2f(viewMoving.x - finalViewSpeed, viewMoving.y);
+            viewMoving = Vector2f(viewMoving.x - fs, viewMoving.y);
     }
     if (abs(Enemy::playerPos.y - viewMoving.y) < maxLen) {
         if (Enemy::playerPos.y > viewMoving.y)
-            viewMoving = Vector2f(viewMoving.x, viewMoving.y + beginViewSpeed);
+            viewMoving = Vector2f(viewMoving.x, viewMoving.y + bs);
         if (Enemy::playerPos.y < viewMoving.y)
-            viewMoving = Vector2f(viewMoving.x, viewMoving.y - beginViewSpeed);
+            viewMoving = Vector2f(viewMoving.x, viewMoving.y - bs);
     } else {
         if (Enemy::playerPos.y > viewMoving.y)
-            viewMoving = Vector2f(viewMoving.x, viewMoving.y + finalViewSpeed);
+            viewMoving = Vector2f(viewMoving.x, viewMoving.y + fs);
         if (Enemy::playerPos.y < viewMoving.y)
-            viewMoving = Vector2f(viewMoving.x, viewMoving.y - finalViewSpeed);
+            viewMoving = Vector2f(viewMoving.x, viewMoving.y - fs);
     }
+
+    prevMouseMove = Vector2f((Mouse::getPosition(*Globals::mainWindow).x - Globals::mainWindow->getSize().x/2.0)*0.2,
+                             (Mouse::getPosition(*Globals::mainWindow).y - Globals::mainWindow->getSize().y/2.0)*0.2);
+
+    viewMoving = Vector2f(viewMoving.x + prevMouseMove.x,
+                          viewMoving.y + prevMouseMove.y);
     Globals::mainWindow->setView(View(viewMoving, Vector2f(Globals::mainWindow->getSize())));
 }
 

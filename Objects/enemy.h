@@ -22,7 +22,7 @@ protected:
     // DamageObject interface
 public:
     FloatRect getGlobalBounds() override;
-    Vector2f getPosition() override {sprite.getPosition();}
+    Vector2f getPosition() override {return sprite.getPosition();}
 
     // DamageObject interface
 public:

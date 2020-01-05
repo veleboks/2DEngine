@@ -17,7 +17,7 @@ using namespace std;
 class Engine
 {
 public:
-    Engine(String nameWindow, unsigned int width = 1920, unsigned int height = 1080, bool defaultStart = true);
+    Engine(String nameWindow, unsigned int width = 1080, unsigned int height = 1080, bool defaultStart = true);
     ~Engine();
     ///Запуск
     virtual void start();
