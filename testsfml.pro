@@ -18,12 +18,16 @@ SOURCES += \
         Objects/button.cpp \
         Objects/damageobject.cpp \
         Objects/enemy.cpp \
+        Objects/enemyhpcounter.cpp \
         Objects/gun.cpp \
+        Objects/hpcounter.cpp \
         Objects/laser.cpp \
         Objects/lasergun.cpp \
         Objects/player.cpp \
+        Objects/playerhpcounter.cpp \
         Objects/unit.cpp \
         Scenes/game.cpp \
+        Scenes/hud.cpp \
         Scenes/menu.cpp \
         Utils/spawncontroll.cpp \
         engine.cpp \
@@ -41,12 +45,16 @@ HEADERS += \
     Objects/button.h \
     Objects/damageobject.h \
     Objects/enemy.h \
+    Objects/enemyhpcounter.h \
     Objects/gun.h \
+    Objects/hpcounter.h \
     Objects/laser.h \
     Objects/lasergun.h \
     Objects/player.h \
+    Objects/playerhpcounter.h \
     Objects/unit.h \
     Scenes/game.h \
+    Scenes/hud.h \
     Scenes/menu.h \
     Utils/spawncontroll.h \
     engine.h \
