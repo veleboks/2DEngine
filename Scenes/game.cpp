@@ -13,14 +13,21 @@ Game::Game()
     sceneTime = 0;
     spawner = new SpawnControll();
     player = new Player(Vector2f(100, 100));
+    hud = new HUD(player);
     addObject(player);
     prevSpawnTime = 0;
 }
 
 void Game::addEnemy(Enemy *e)
 {
+    hud->addEnemyHealthBar(e);
     enemies.push_back(e);
     addObject(e);
+}
+
+void Game::renderUI()
+{
+    hud->render();
 }
 
 void Game::sceneLogic()
@@ -33,13 +40,16 @@ void Game::sceneLogic()
     for (auto it = enemies.begin(); it != enemies.end();) {
         float damage = player->getGlobalDamage(*it);
         (*it)->damage(damage);
-        if ((*it)->getHP() <= 0) enemies.erase(it);
-        else {
+        if ((*it)->getHP() <= 0){
+            delete *it;
+            enemies.erase(it);
+        } else {
             addObject(*it);
             ++it;
         }
     }
     smoothViewMove();
+    hud->logic();
 }
 
 void Game::smoothViewMove()

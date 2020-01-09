@@ -1,12 +1,12 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "scene.h"
 #include "Objects/player.h"
 #include "Objects/enemy.h"
 #include "Utils/spawncontroll.h"
 #include "Objects/laser.h"
 #include "Objects/damageobject.h"
+#include "hud.h"
 
 class Game : public Scene
 {
@@ -20,6 +20,7 @@ private:
     vector<Enemy *> enemies;
     SpawnControll * spawner;
     Player * player;
+    HUD * hud;
     void spawnEnemy();
     void smoothViewMove();
 public:
@@ -28,6 +29,7 @@ public:
 
 //     Scene interface
 protected:
+    void renderUI() override;
     void sceneLogic() override;
 };
 

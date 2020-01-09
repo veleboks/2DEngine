@@ -24,5 +24,6 @@ void Scene::logic()
 void Scene::render()
 {
     for(auto it: objects) Globals::mainWindow->draw(*it);
+    renderUI();
 }
 

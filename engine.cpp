@@ -54,7 +54,6 @@ void Engine::update() {
 
     window->clear(Color::White);
 
-
     for(auto it: scenes) it->render();
 
     window->display();

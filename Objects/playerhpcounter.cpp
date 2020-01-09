@@ -6,8 +6,8 @@ PlayerHPCounter::PlayerHPCounter(Vector2f pos, Vector2f size, Unit *unit, float 
 
 void PlayerHPCounter::posUpdate()
 {
-    Vector2f viewPos = Vector2f(Globals::mainWindow->getView().getCenter().x - Globals::mainWindow->getView().getSize().x,
-                                Globals::mainWindow->getView().getCenter().y - Globals::mainWindow->getView().getSize().y);
+    Vector2f viewPos = Vector2f(Globals::mainWindow->getView().getCenter().x - Globals::mainWindow->getView().getSize().x/2,
+                                Globals::mainWindow->getView().getCenter().y - Globals::mainWindow->getView().getSize().y/2);
     background->setPosition(Vector2f(viewPos.x + pos.x, viewPos.y + pos.y));
     hpRect->setPosition(viewPos.x + pos.x + abs(background->getOutlineThickness()),
                         viewPos.y + pos.y + abs(background->getOutlineThickness()));

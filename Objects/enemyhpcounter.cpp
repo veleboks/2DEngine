@@ -4,9 +4,9 @@ EnemyHPCounter::EnemyHPCounter(Vector2f pos, Vector2f size, Unit * unit1, float 
 
 void EnemyHPCounter::posUpdate()
 {
-    background->setPosition(Vector2f(unit->getPosition().x - background->getSize().x - 5.0,
+    background->setPosition(Vector2f(unit->getPosition().x,
                                      unit->getPosition().y - background->getSize().y - 5.0));
     hpRect->setPosition(Vector2f(background->getPosition().x + abs(background->getOutlineThickness()),
-                                 background->getPosition().x + abs(background->getOutlineThickness())));
+                                 background->getPosition().y + abs(background->getOutlineThickness())));
 }
 

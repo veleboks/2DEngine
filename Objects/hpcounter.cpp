@@ -32,5 +32,5 @@ void HPCounter::draw(RenderTarget &target, RenderStates states) const
 void HPCounter::logic()
 {
     posUpdate();
-    hpRect->setSize(Vector2f((background->getSize().x-10) * unit->getHP() / maxHP, hpRect->getSize().y));
+    hpRect->setSize(Vector2f((background->getSize().x-6) * unit->getHP() / maxHP, hpRect->getSize().y));
 }

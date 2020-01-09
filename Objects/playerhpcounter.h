@@ -8,7 +8,6 @@ class PlayerHPCounter : public HPCounter
 {
 public:
     PlayerHPCounter(Vector2f pos, Vector2f size, Unit * unit, float maxHP = 100.0);
-
     // HPCounter interface
 private:
     Vector2f pos;

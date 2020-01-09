@@ -9,10 +9,13 @@
 class HUD : public Scene
 {
 private:
-
+    Player * player;
+    vector<Enemy*> enemies;
+    vector<HPCounter*> healthBars;
 public:
-    HUD(Player * player, vector<Enemy*> enemies);
-
+    HUD(Player * player);
+    void addEnemyHealthBar(Enemy* enemy);
+    void updateEnemies(vector<Enemy*> enemies);
     // Scene interface
 protected:
     void sceneLogic() override;
