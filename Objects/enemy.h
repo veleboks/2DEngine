@@ -3,6 +3,7 @@
 
 #include "unit.h"
 #include "globals.h"
+#include <cmath>
 
 class Enemy : public Unit
 {

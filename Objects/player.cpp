@@ -20,6 +20,11 @@ Player::Player(Vector2f pos, float speed)
 
 void Player::draw(RenderTarget &target, RenderStates states) const
 {
+//    RectangleShape bounds;
+//    bounds.setSize(Vector2f(sprite.getGlobalBounds().width, sprite.getGlobalBounds().height));
+//    bounds.setPosition(sprite.getPosition());
+//    bounds.setFillColor(Color::Blue);
+//    target.draw(bounds, states);
     target.draw(sprite, states);
     for (auto it : damagedObjs) target.draw(*it, states);
 }
@@ -67,7 +72,9 @@ void Player::logic()
 
 Vector2f Player::getCenter()
 {
-    return Vector2f(sprite.getPosition().x + sprite.getTexture()->getSize().x/2, sprite.getPosition().y + sprite.getTexture()->getSize().y/2);
+//    return Vector2f(sprite.getPosition().x + sprite.getTexture()->getSize().x/2, sprite.getPosition().y + sprite.getTexture()->getSize().y/2);
+//    return sprite.getPosition();
+    return Vector2f(sprite.getPosition().x + sprite.getGlobalBounds().width/2, sprite.getPosition().y + sprite.getGlobalBounds().height/2);
 }
 
 FloatRect Player::getGlobalBounds()

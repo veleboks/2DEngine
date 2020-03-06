@@ -23,10 +23,15 @@ FloatRect Enemy::getGlobalBounds()
 void Enemy::logic()
 {
     float speed = SPEED * Globals::gameTime;
-
-    if (sprite.getPosition().x + sprite.getSize().x/2 < playerPos.x) sprite.move(speed, 0);
-    else sprite.move(-speed, 0);
-    if (sprite.getPosition().y + sprite.getSize().y/2 < playerPos.y) sprite.move(0, speed);
-    else sprite.move(0, -speed);
+    float sx = playerPos.x - sprite.getPosition().x - sprite.getSize().x/2;
+    float sy = playerPos.y - sprite.getPosition().y - sprite.getSize().y/2;
+    float k = speed/sqrt(sx*sx+sy*sy);
+    float movex = k*sx;
+    float movey = k*sy;
+    sprite.move(movex, movey);
+//    if (sprite.getPosition().x + sprite.getSize().x/2 < playerPos.x) sprite.move(speed, 0);
+//    else sprite.move(-speed, 0);
+//    if (sprite.getPosition().y + sprite.getSize().y/2 < playerPos.y) sprite.move(0, speed);
+//    else sprite.move(0, -speed);
 
 }
