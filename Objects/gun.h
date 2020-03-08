@@ -7,11 +7,14 @@
 
 class Gun : public DamageObject
 {
+private:
+    bool mouseStateFlag = false;
     // Drawable interface
 protected:
     RectangleShape * sprite;
     virtual void draw(RenderTarget &target, RenderStates states) const override = 0;
     virtual void onClick() = 0;
+    virtual void onRelease() = 0;
     // GameObject interface
 public:
     void logic() override;

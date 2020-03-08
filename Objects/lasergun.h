@@ -20,7 +20,7 @@ public:
     // Gun interface
 protected:
     void onClick() override;
-
+    void onRelease() override;
     // DamageObject interface
 public:
     float getDamage() override {return 0;}

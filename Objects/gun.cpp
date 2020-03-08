@@ -16,5 +16,15 @@ void Gun::logic()
     sprite->rotate(angle - getRotation());
     for (auto it : damagedObjs) it->logic();
     //    angle = (Mouse::getPosition().x - sprite->getPosition().x)
-    if (Mouse::isButtonPressed(Mouse::Left)) onClick();
+
+    /// Марат красавчик
+    if (Mouse::isButtonPressed(Mouse::Left) && !mouseStateFlag) {
+        onClick();
+        mouseStateFlag = true;
+    }
+    if (!Mouse::isButtonPressed(Mouse::Left) && mouseStateFlag) {
+        onRelease();
+        mouseStateFlag = false;
+    }
+
 }
