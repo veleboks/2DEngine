@@ -33,41 +33,50 @@ void Player::logic()
 {
     for (auto it : damagedObjs) it->logic();
     float speed = SPEED * Globals::gameTime;
-    if (Mouse::getPosition(*Globals::mainWindow).x + Globals::mainWindow->getView().getCenter().x - Globals::mainWindow->getView().getSize().x/2 > getCenter().x) dir = eDir::RIGHT;
-    else dir = eDir::LEFT;
-    bool isMove = Keyboard::isKeyPressed(Keyboard::W)
-            || Keyboard::isKeyPressed(Keyboard::S)
-            || Keyboard::isKeyPressed(Keyboard::A)
-            || Keyboard::isKeyPressed(Keyboard::D);
-    if (Keyboard::isKeyPressed(Keyboard::W)) sprite.move(0, -speed);
-    if (Keyboard::isKeyPressed(Keyboard::S)) sprite.move(0, speed);
-    if (Keyboard::isKeyPressed(Keyboard::A)) sprite.move(-speed, 0);
-    if (Keyboard::isKeyPressed(Keyboard::D)) sprite.move(speed, 0);
-    if (isMove) {
-        aNTime += Globals::gameTime;
-        if (aNTime - prevAnTime > 80) {
-            textNum = (textNum+1)%4;
-            prevAnTime = aNTime;
-            if (dir == eDir::RIGHT) {
-                if (textNum == 0 || textNum == 3) sprite.move(-3, 0);
-                if (textNum == 1 || textNum == 2) sprite.move(3, 0);
-            }
-        }
-        if (dir == eDir::LEFT) {
-            sprite.setTextureRect(animation[1][textNum]);
-        } else {
-            sprite.setTextureRect(animation[0][textNum]);
-        }
-    } else {
-        if (dir == eDir::LEFT) {
-            sprite.setTextureRect(stand[1]);
-        } else {
-            sprite.setTextureRect(stand[0]);
-        }
-        aNTime = 0;
-        prevAnTime = 0;
-        textNum = 0;
-    }
+//    if (Mouse::getPosition(*Globals::mainWindow).x + Globals::mainWindow->getView().getCenter().x - Globals::mainWindow->getView().getSize().x/2 > getCenter().x) dir = eDir::RIGHT;
+//    else dir = eDir::LEFT;
+//    bool isMove = Keyboard::isKeyPressed(Keyboard::W)
+//            || Keyboard::isKeyPressed(Keyboard::S)
+//            || Keyboard::isKeyPressed(Keyboard::A)
+//            || Keyboard::isKeyPressed(Keyboard::D);
+    Vector2f move(0, 0);
+    if (Keyboard::isKeyPressed(Keyboard::W)) move.y -= speed;
+    if (Keyboard::isKeyPressed(Keyboard::S)) move.y += speed;
+    if (Keyboard::isKeyPressed(Keyboard::A)) move.x -= speed;
+    if (Keyboard::isKeyPressed(Keyboard::D)) move.x += speed;
+
+//    if (Keyboard::isKeyPressed(Keyboard::Space)) dash();
+//    speedManage();
+
+    sprite.move(move);
+
+///////////////////Animation////////////////////////////////////////////////////////////////////////////////////////////////////
+//    if (isMove) {
+//        aNTime += Globals::gameTime;
+//        if (aNTime - prevAnTime > 80) {
+//            textNum = (textNum+1)%4;
+//            prevAnTime = aNTime;
+//            if (dir == eDir::RIGHT) {
+//                if (textNum == 0 || textNum == 3) sprite.move(-3, 0);
+//                if (textNum == 1 || textNum == 2) sprite.move(3, 0);
+//            }
+//        }
+//        if (dir == eDir::LEFT) {
+//            sprite.setTextureRect(animation[1][textNum]);
+//        } else {
+//            sprite.setTextureRect(animation[0][textNum]);
+//        }
+//    } else {
+//        if (dir == eDir::LEFT) {
+//            sprite.setTextureRect(stand[1]);
+//        } else {
+//            sprite.setTextureRect(stand[0]);
+//        }
+//        aNTime = 0;
+//        prevAnTime = 0;
+//        textNum = 0;
+//    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 Vector2f Player::getCenter()

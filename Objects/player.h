@@ -24,6 +24,8 @@ private:
     float prevAnTime = 0;
     float aNTime = 0;
     // Drawable interface
+//    void dash();
+
 protected:
     void draw(RenderTarget &target, RenderStates states) const override;
 

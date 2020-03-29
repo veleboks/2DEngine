@@ -25,6 +25,7 @@ SOURCES += \
         Objects/lasergun.cpp \
         Objects/player.cpp \
         Objects/playerhpcounter.cpp \
+        Objects/speedcontroller.cpp \
         Objects/unit.cpp \
         Scenes/game.cpp \
         Scenes/hud.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     Objects/lasergun.h \
     Objects/player.h \
     Objects/playerhpcounter.h \
+    Objects/speedcontroller.h \
     Objects/unit.h \
     Scenes/game.h \
     Scenes/hud.h \
